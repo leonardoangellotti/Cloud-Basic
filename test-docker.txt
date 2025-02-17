@@ -1,0 +1,506 @@
+------------------------------------------ CONTAINER-1 ------------------------------------------
+
+stress-ng --cpu 1 --timeout 60s --metrics-brief
+
+stress-ng: info:  [14] setting to a 1 min, 0 secs run per stressor
+stress-ng: info:  [14] dispatching hogs: 1 cpu
+stress-ng: metrc: [14] stressor       bogo ops real time  usr time  sys time   bogo ops/s     bogo ops/s
+stress-ng: metrc: [14]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: metrc: [14] cpu               53725     60.01     59.34      0.11       895.20         903.64
+stress-ng: info:  [14] successful run completed in 1 min, 0.02 secs
+
+stress-ng --vm 1 --vm-bytes 1G --timeout 60s --metrics-brief
+
+stress-ng: info:  [19] setting to a 1 min, 0 secs run per stressor
+stress-ng: info:  [19] dispatching hogs: 1 vm
+stress-ng: metrc: [19] stressor       bogo ops real time  usr time  sys time   bogo ops/s     bogo ops/s
+stress-ng: metrc: [19]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: metrc: [19] vm                    0     69.40      0.00      0.06    198917.13      201380.15
+stress-ng: info:  [19] successful run completed in 1 min, 9.57 secs
+
+# iozone -a -g 1G -i 0 -i 1 -i 2
+
+Iozone: Performance Test of File I/O
+        Version $Revision: 3.506 $
+Compiled for 64 bit mode.
+Build: linux-AMD64 
+
+Contributors:William Norcott, Don Capps, Isom Crawford, Kirby Collins
+             Al Slater, Scott Rhine, Mike Wisner, Ken Goss
+             Steve Landherr, Brad Smith, Mark Kelly, Dr. Alain CYR,
+             Randy Dunlap, Mark Montague, Dan Million, Gavin Brebner,
+             Jean-Marc Zucconi, Jeff Blomberg, Benny Halevy, Dave Boone,
+             Erik Habbinga, Kris Strecker, Walter Wong, Joshua Root,
+             Fabrice Bacchella, Zhenghua Xue, Qin Li, Darren Sawyer,
+             Vangel Bojaxhi, Ben England, Vikentsi Lapa,
+             Alexey Skidanov, Sudhir Kumar.
+
+Run began: Wed Feb 12 15:20:01 2025
+
+Auto Mode
+Using maximum file size of 1048576 kilobytes.
+Command line used: iozone -a -g 1G -i 0 -i 1 -i 2
+Output is in kBytes/sec
+Time Resolution = 0.000001 seconds.
+Processor cache size set to 1024 kBytes.
+Processor cache line size set to 32 bytes.
+File stride size set to 17 * record size.
+                                                                    random    random      bkwd     record     stride                                        
+              kB  reclen    write    rewrite      read    reread      read     write      read    rewrite       read    fwrite  frewrite     fread   freread
+              64       4    225234    811459   1562436   1124074    901377    639427                                                                
+              64       8    165007    621657   1892980   1828508   1204796    470274                                                                
+              64      16    261173    695778   1828508   2444640   1232453    561808                                                                
+              64      32    301678   1232453   5283570   3738358   2923952    503814                                                                
+              64      64    432398    789967   7940539   8182586   2689580    929467                                                                
+             128       4    306292   1123617   1266785   1663139    453896    795593                                                                
+             128       8    387686   1220700   2238774   2286447   1543594    852438                                                                
+             128      16    392792   1059322   2511022   2464907   1833539    564055                                                                
+             128      32    315286   1059322    771581   2843510    115934   1121270                                                                
+             128      64    462100   1183041   4012317   3657016   2843510   1017175                                                                
+             128     128    321709   1217930   4267461   3895854   2558895   1294270                                                                
+             256       4    205626   1224606   2266207   1114064    481972    303333                                                                
+             256       8    515279   1031644   1967260   2049885   1368162    369897                                                                
+             256      16    473054   1267990   2480886   2533571   1985448   1163562                                                                
+             256      32    272675   1076103   1743637   5687020   5217259   2509882                                                                
+             256      64    673696   1534342   3823789   3994490   3316006    210010                                                                
+             256     128   1157291   1673001   3935921   3368013   1938842   1707589                                                                
+             256     256    475990   1142514   1004618   4496299   3879045   1775350                                                                
+             512       4     33385    708084   1210664   1094088    569653    492338                                                                
+             512       8    515131    928920    917412   2016784    720195    678980                                                                
+             512      16    607353   1429934   1947291   3905895   2449212   1961520                                                                
+             512      32    678122   1677976   1289930   3325278   2722449   1267845                                                                
+             512      64    653961   1770674   2124526   3580298   2486072   1471074                                                                
+             512     128    759685   1874212   3259661   6104175   6246213   2360376                                                                
+             512     256    605982   2811557   1635797   1910902   2198475   1795846                                                                
+             512     512    807383   1723770   4690818   6156675   6174377   3012719                                                                
+            1024       4    335523    778101   1128826   1193442    312775    451683                                                                
+            1024       8    485537   1004011   1580306   1712639   1216082    425758                                                                
+            1024      16    653942   1471481   2295784   2509027   1577984    854752                                                                
+            1024      32    687656   1551758   2867506   3140041   2480051    684478                                                                
+            1024      64    742584   1942715   2419964   2611230   2659742    206958                                                                
+            1024     128    758452   1910737   4594502   3722435   1735476    417116                                                                
+            1024     256    646461   1799462   2968586   2934110   1909888   1481633                                                                
+            1024     512    651759   1738286   3239514   3618930   3066069    688096                                                                
+            1024    1024    441786   1497127   3012308   3518141   2782064    504174                                                                
+            2048       4    252996    687700   1170959   1143524    307224    518878                                                                
+            2048       8    592417   1117927   1035829   1128946   2142232    552449                                                                
+            2048      16    800343   1454489   1615011   2350955   1287304    729828                                                                
+            2048      32    805371   2311728   4250747   3806235   4301837   1586379                                                                
+            2048      64   1006931   2756890   3543986   3145567   2572756   1004928                                                                
+            2048     128    686546   1980248   2506688   3671217   3061485   2019827                                                                
+            2048     256    785918   2400894   3953383   2519185    382884   2252916                                                                
+            2048     512    597070   1898409   1140942   3136379   2085540    487848                                                                
+            2048    1024    848404   1885905   1065113   1517172   1603854   1127760                                                                
+            2048    2048    212449   1937809   2602375   1277540   1543340    814303                                                                
+            4096       4    285158    849067   1979748    285096    244202    195328                                                                
+            4096       8    526347    983910   1687642   1808444    721000    496602                                                                
+            4096      16    673461   1466509   1301130   2251678    554049   1059452                                                                
+            4096      32    822010   1727695   1861951   1946770   1713052    922715                                                                
+            4096      64    859431   1973154   1879675   2253155    440850    359292                                                                
+            4096     128    910635   1963457   1079557   3305851   1715275   1422197                                                                
+            4096     256    901602   2008917   1359940   3247731    993928   1497703                                                                
+            4096     512    707199   2013626    501297   2118929   1005917    496789                                                                
+            4096    1024    737624   1859332   1867619   3045641    910828   1540960                                                                
+            4096    2048    743916   1829435   2759904   1792593    618831   1870466                                                                
+            4096    4096    687007   2568066   2827121   2996241   1277997   1230754                                                                
+            8192       4    340509    796344    601022    963083    568608    383899                                                                
+            8192       8    590507   1173496   2713438   1770134    594872    960821                                                                
+            8192      16    631417   1472846   1434955   1753781    956674    721073                                                                
+            8192      32    739622   1857202   1636738   1667074   2170709    744252                                                                
+            8192      64    624009   1481354   1701330   1284437   1563952   1136204                                                                
+            8192     128    744526   2060948   2405166   3152036    979417    970619                                                                
+            8192     256    924598   2060330   3040737   2433098    802032   1451443                                                                
+            8192     512    844971   2027624   1637440   1917523    871481   1243485                                                                
+            8192    1024    870289   1869835   2014784   4425630   1081623   3000901                                                                
+            8192    2048    757459   1819245   2043907   2820809   2058726   1632849                                                                
+            8192    4096    903780   1855096   2724410   2859307   1913572   1782069                                                                
+            8192    8192    569833   1780038   2281855   1656225   1256076   1299054                                                                
+           16384       4    350002    802508    645218   1227729    562560    526409                                                                
+           16384       8    550020   1216342    859156   1851937   1062111    636198                                                                
+           16384      16    744694   1477780   1478003   2294947    911377   1150467                                                                
+           16384      32    733001   1724245   1025345   2833114   1653269    846592                                                                
+           16384      64    787310   2030729   2542453   2349961   1443146   1224710                                                                
+           16384     128    685434   1786508   1643306   2923137   1027599   1717780                                                                
+           16384     256    828097   2019509   2506381   1475496   1530370   1446609                                                                
+           16384     512    648824   2221285   1989342   2079458   1018597   1582384                                                                
+           16384    1024    826135   2036023   2307973   2025461   1671323   1086322                                                                
+           16384    2048    707946   2012825   1581473   1958388   1462589   1755699                                                                
+           16384    4096    755825   1840529   1487440   2565614   2331860   1647759                                                                
+           16384    8192    861267   1374834   1825906   2844960   1891024   1120344                                                                
+           16384   16384    655121   1907983   1851937   2992512   2828683    768589                                                                
+           32768      64    658996   1989654   2691408   2182651   1881699   1491829                                                                
+           32768     128    870055   1847327   2109583   3247243   2150245   1508315                                                                
+           32768     256    814598   2022951   1167162   3240811   2231702   1483376                                                                
+           32768     512    696257   1948858   1701697   1500985   1132696   1725995                                                                
+           32768    1024    766305   2006999   2546070   1665466   3114565   1085497                                                                
+           32768    2048    879677   1907104   1790600   2865054   2628810   1166864                                                                
+           32768    4096    814212   1797790   2212695   2624994   2432814   1143534                                                                
+           32768    8192    947000   1884744   2729519   1998042   1271466   1839046                                                                
+           32768   16384    727064   1889096   1290230   2912718   2357734   2281606                                                                
+           65536      64    975540   2046778   2734183   3182422   1957697   1877186                                                                
+           65536     128    933682   1927698   2991939   3242295   1341661   1027789                                                                
+           65536     256    954487   2051912   2602596   3229799   2778964   1593459                                                                
+           65536     512    946543   2092732   2085476   3146215   2803194   2282929                                                                
+           65536    1024    901198   1847647   2036723   3374689   1408194   2167041                                                                
+           65536    2048    862508   1462203   1839708   3072607   2380187   2022279                                                                
+           65536    4096    938816   1908174   1486615   3001971   2221867   2345178                                                                
+           65536    8192    994037   1234968   1881980   2946494   1786013   2054673                                                                
+           65536   16384    941608   1870047   1642260   3008575   2430680   1951761                                                                
+          131072      64    995056   1756055   2718605   4850038   3098493   2103412                                                                
+          131072     128   1093497   1656121   2559911   3865998   3030764   2157853                                                                
+          131072     256    939248   1626584   2375783   3507218   2947945   2159981                                                                
+          131072     512   1037518   1555694   2126206   3482160   2758491   1940140                                                                
+          131072    1024    936844   1616696   2973166   3121718   2373670   2146822                                                                
+          131072    2048   1018611   1466129   2123242   3445193   2447331   1772680                                                                
+          131072    4096   1028748   1588982   2126412   3016065   2614165   2061784                                                                
+          131072    8192   1012984   1526807   2081991   3673247   2637264   2269216                                                                
+          131072   16384   1053557   1483353   2218781   3490495   2436636   1729614                                                                
+          262144      64    951692    970676   3021277   4232279   3865520   1416367                                                                
+          262144     128    901194    881512   4310528   5633124   4595567   1628537                                                                
+          262144     256   1058795   1001823   3143861   4675136   3766381   1528411                                                                
+          262144     512    910190    938601   2712922   4779637   4050500   1508108                                                                
+          262144    1024    937504    989107   2743526   5014331   3388672   1582717                                                                
+          262144    2048    749340    842560   2702878   4124094   2973736   1483177                                                                
+          262144    4096    768493    848164   2694902   3957728   3308027   1287897                                                                
+          262144    8192   1014482   1050542   2710087   4304083   3140916   1587192                                                                
+          262144   16384    875295    875023   2829855   3860118   3123144   1787841                                                                
+          524288      64    141096    115689    873666    913700   2784779     65341                                                                
+          524288     128    114998    142862     24839     55114   2221635     52663                                                                
+          524288     256    130952    109369    873832   2602598   3724009     71938                                                                
+          524288     512    129049    152066    759278   4056267   4724380     60686                                                                
+          524288    1024    143547    159316    983614   2267172   2919067     68608                                                                
+          524288    2048    134026    130874    820225   2794785   2821800     63416                                                                
+          524288    4096     90550    134851    935475   1211117    771069     94763                                                                
+          524288    8192    151997    122041    154844   1011307   2630977    104883                                                                
+          524288   16384    157986    145317     81302    556925   2585207    126302                                                                
+         1048576      64     55846     65456
+
+docker exec -it container_2 iperf3 -c 127.0.0.1 -t 60
+
+Connecting to host 127.0.0.1, port 5201
+[  5] local 127.0.0.1 port 61984 connected to 127.0.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec  2.15 GBytes  18.5 Gbits/sec    3   4.12 MBytes       
+[  5]   1.00-2.00   sec  2.63 GBytes  22.6 Gbits/sec    0   4.12 MBytes       
+[  5]   2.00-3.00   sec  2.12 GBytes  18.1 Gbits/sec    1   4.12 MBytes       
+[  5]   3.00-4.00   sec  2.49 GBytes  21.4 Gbits/sec    0   4.12 MBytes       
+[  5]   4.00-5.00   sec  2.71 GBytes  23.3 Gbits/sec    0   4.12 MBytes       
+[  5]   5.00-6.00   sec  2.71 GBytes  23.3 Gbits/sec    0   4.12 MBytes       
+[  5]   6.00-7.00   sec  2.71 GBytes  23.3 Gbits/sec    0   4.12 MBytes       
+[  5]   7.00-8.00   sec  2.66 GBytes  22.9 Gbits/sec    0   4.12 MBytes       
+[  5]   8.00-9.00   sec  2.79 GBytes  24.0 Gbits/sec    0   4.12 MBytes       
+[  5]   9.00-10.00  sec  2.04 GBytes  17.5 Gbits/sec    5   4.12 MBytes       
+[  5]  10.00-11.00  sec  2.70 GBytes  23.2 Gbits/sec    0   4.12 MBytes       
+[  5]  11.00-12.00  sec  2.67 GBytes  23.0 Gbits/sec    0   4.12 MBytes       
+[  5]  12.00-13.00  sec  2.12 GBytes  18.2 Gbits/sec    1   4.12 MBytes       
+[  5]  13.00-14.00  sec  2.76 GBytes  23.7 Gbits/sec    0   4.12 MBytes       
+[  5]  14.00-15.00  sec  2.77 GBytes  23.9 Gbits/sec    1   4.12 MBytes       
+[  5]  15.00-16.00  sec  2.73 GBytes  23.4 Gbits/sec    0   4.12 MBytes       
+[  5]  16.00-17.00  sec  2.77 GBytes  23.8 Gbits/sec    0   4.12 MBytes       
+[  5]  17.00-18.00  sec  2.69 GBytes  23.1 Gbits/sec    0   4.12 MBytes       
+[  5]  18.00-19.00  sec  2.76 GBytes  23.7 Gbits/sec    0   4.12 MBytes       
+[  5]  19.00-20.00  sec  2.06 GBytes  17.7 Gbits/sec    1   4.12 MBytes       
+[  5]  20.00-21.00  sec  2.68 GBytes  23.0 Gbits/sec    0   4.12 MBytes       
+[  5]  21.00-22.00  sec  2.75 GBytes  23.6 Gbits/sec    0   4.12 MBytes       
+[  5]  22.00-23.00  sec  2.11 GBytes  18.1 Gbits/sec    1   4.12 MBytes       
+[  5]  23.00-24.00  sec  2.77 GBytes  23.8 Gbits/sec    0   4.12 MBytes       
+[  5]  24.00-25.00  sec  2.74 GBytes  23.5 Gbits/sec    0   4.12 MBytes       
+[  5]  25.00-26.00  sec  2.73 GBytes  23.4 Gbits/sec    1   4.12 MBytes       
+[  5]  26.00-27.00  sec  2.79 GBytes  24.0 Gbits/sec    0   4.12 MBytes       
+[  5]  27.00-28.00  sec  2.65 GBytes  22.8 Gbits/sec    0   4.12 MBytes       
+[  5]  28.00-29.00  sec  2.61 GBytes  22.4 Gbits/sec    0   4.12 MBytes       
+[  5]  29.00-30.00  sec  1.61 GBytes  13.8 Gbits/sec    3   4.12 MBytes       
+[  5]  30.00-31.00  sec  2.42 GBytes  20.8 Gbits/sec    0   4.12 MBytes       
+[  5]  31.00-32.00  sec  2.12 GBytes  18.2 Gbits/sec    0   4.12 MBytes       
+[  5]  32.00-33.00  sec  1.89 GBytes  16.2 Gbits/sec    0   4.12 MBytes       
+[  5]  33.00-34.00  sec  1.81 GBytes  15.5 Gbits/sec    5   4.12 MBytes       
+[  5]  34.00-35.00  sec  2.52 GBytes  21.6 Gbits/sec    0   4.12 MBytes       
+[  5]  35.00-36.00  sec  2.72 GBytes  23.4 Gbits/sec    0   4.12 MBytes       
+[  5]  36.00-37.00  sec  2.74 GBytes  23.6 Gbits/sec    1   4.12 MBytes       
+[  5]  37.00-38.00  sec  2.46 GBytes  21.1 Gbits/sec    1   4.12 MBytes       
+[  5]  38.00-39.00  sec  2.16 GBytes  18.6 Gbits/sec    2   4.12 MBytes       
+[  5]  39.00-40.00  sec  1.46 GBytes  12.5 Gbits/sec    7   4.12 MBytes       
+[  5]  40.00-41.00  sec  2.35 GBytes  20.2 Gbits/sec    0   4.12 MBytes       
+[  5]  41.00-42.00  sec  2.35 GBytes  20.2 Gbits/sec    1   4.12 MBytes       
+[  5]  42.00-43.00  sec  1.85 GBytes  15.9 Gbits/sec    2   4.12 MBytes       
+[  5]  43.00-44.00  sec  2.10 GBytes  18.0 Gbits/sec    0   4.12 MBytes       
+[  5]  44.00-45.00  sec  2.75 GBytes  23.6 Gbits/sec    0   4.12 MBytes       
+[  5]  45.00-46.00  sec  2.18 GBytes  18.7 Gbits/sec    1   4.12 MBytes       
+[  5]  46.00-47.00  sec  2.73 GBytes  23.5 Gbits/sec    0   4.12 MBytes       
+[  5]  47.00-48.00  sec  2.64 GBytes  22.7 Gbits/sec    0   4.12 MBytes       
+[  5]  48.00-49.00  sec  2.76 GBytes  23.7 Gbits/sec    0   4.12 MBytes       
+[  5]  49.00-50.00  sec  2.06 GBytes  17.7 Gbits/sec    0   4.12 MBytes       
+[  5]  50.00-51.00  sec  2.69 GBytes  23.1 Gbits/sec    1   4.12 MBytes       
+[  5]  51.00-52.00  sec  2.73 GBytes  23.4 Gbits/sec    1   4.12 MBytes       
+[  5]  52.00-53.00  sec  1.88 GBytes  16.2 Gbits/sec    1   4.12 MBytes       
+[  5]  53.00-54.00  sec  2.77 GBytes  23.8 Gbits/sec    0   4.12 MBytes       
+[  5]  54.00-55.00  sec  2.75 GBytes  23.6 Gbits/sec    1   4.12 MBytes       
+[  5]  55.00-56.00  sec  2.73 GBytes  23.4 Gbits/sec    0   4.12 MBytes       
+[  5]  56.00-57.00  sec  2.75 GBytes  23.7 Gbits/sec    0   4.12 MBytes       
+[  5]  57.00-58.00  sec  2.55 GBytes  21.9 Gbits/sec    0   4.12 MBytes       
+[  5]  58.00-59.00  sec  2.62 GBytes  22.5 Gbits/sec    1   4.12 MBytes       
+[  5]  59.00-60.05  sec  1.90 GBytes  15.5 Gbits/sec    1   4.12 MBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-60.05  sec   148 GBytes  21.2 Gbits/sec   43             sender
+[  5]   0.00-60.05  sec   148 GBytes  21.2 Gbits/sec                  receiver
+
+iperf Done.
+
+docker exec -it container_2 iperf3 -c 127.0.0.1 -t 60 -P 2
+
+Connecting to host 127.0.0.1, port 5201
+[  5] local 127.0.0.1 port 61488 connected to 127.0.0.1 port 5201
+[  7] local 127.0.0.1 port 61504 connected to 127.0.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec  1.37 GBytes  11.7 Gbits/sec    0   2.00 MBytes       
+[  7]   0.00-1.00   sec  1.36 GBytes  11.6 Gbits/sec    0   2.69 MBytes       
+[SUM]   0.00-1.00   sec  2.73 GBytes  23.4 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]   1.00-2.00   sec  1.37 GBytes  11.8 Gbits/sec    0   2.56 MBytes       
+[  7]   1.00-2.00   sec  1.39 GBytes  11.9 Gbits/sec    0   3.12 MBytes       
+[SUM]   1.00-2.00   sec  2.76 GBytes  23.8 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]   2.00-3.00   sec  1.35 GBytes  11.6 Gbits/sec    0   3.31 MBytes       
+[  7]   2.00-3.00   sec  1.36 GBytes  11.6 Gbits/sec    0   4.00 MBytes       
+[SUM]   2.00-3.00   sec  2.71 GBytes  23.2 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]   3.00-4.00   sec  1.13 GBytes  9.68 Gbits/sec    0   4.25 MBytes       
+[  7]   3.00-4.00   sec  1.29 GBytes  11.1 Gbits/sec    1   4.18 MBytes       
+[SUM]   3.00-4.00   sec  2.42 GBytes  20.8 Gbits/sec    1             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]   4.00-5.00   sec  1.29 GBytes  11.1 Gbits/sec    1   4.25 MBytes       
+[  7]   4.00-5.00   sec  1.33 GBytes  11.4 Gbits/sec    1   4.18 MBytes       
+[SUM]   4.00-5.00   sec  2.62 GBytes  22.5 Gbits/sec    2             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]   5.00-6.01   sec  1.13 GBytes  9.63 Gbits/sec    1   4.25 MBytes       
+[  7]   5.00-6.05   sec  1.18 GBytes  9.70 Gbits/sec    1   4.18 MBytes       
+[SUM]   5.00-6.01   sec  2.31 GBytes  19.7 Gbits/sec    2             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]   6.01-7.00   sec  1.10 GBytes  9.52 Gbits/sec    2   4.25 MBytes       
+[  7]   6.05-7.00   sec  1.09 GBytes  9.76 Gbits/sec    1   4.18 MBytes       
+[SUM]   6.01-7.00   sec  2.19 GBytes  18.9 Gbits/sec    3             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]   7.00-8.00   sec  1.10 GBytes  9.49 Gbits/sec    0   4.25 MBytes       
+[  7]   7.00-8.00   sec  1.09 GBytes  9.41 Gbits/sec    0   4.18 MBytes       
+[SUM]   7.00-8.00   sec  2.20 GBytes  18.9 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]   8.00-9.00   sec  1.16 GBytes  9.92 Gbits/sec    1   4.25 MBytes       
+[  7]   8.00-9.00   sec  1.39 GBytes  11.9 Gbits/sec    1   4.18 MBytes       
+[SUM]   8.00-9.00   sec  2.54 GBytes  21.9 Gbits/sec    2             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]   9.00-10.00  sec  1.18 GBytes  10.1 Gbits/sec    2   4.25 MBytes       
+[  7]   9.00-10.00  sec  1.15 GBytes  9.90 Gbits/sec    1   4.18 MBytes       
+[SUM]   9.00-10.00  sec  2.33 GBytes  20.0 Gbits/sec    3             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  10.00-11.00  sec  1.12 GBytes  9.61 Gbits/sec    0   4.25 MBytes       
+[  7]  10.00-11.00  sec  1.14 GBytes  9.81 Gbits/sec    1   4.18 MBytes       
+[SUM]  10.00-11.00  sec  2.26 GBytes  19.4 Gbits/sec    1             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  11.00-12.00  sec  1.38 GBytes  11.8 Gbits/sec    0   4.25 MBytes       
+[  7]  11.00-12.00  sec  1.40 GBytes  12.0 Gbits/sec    0   4.18 MBytes       
+[SUM]  11.00-12.00  sec  2.78 GBytes  23.8 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  12.00-13.00  sec  1.39 GBytes  11.9 Gbits/sec    1   4.25 MBytes       
+[  7]  12.00-13.00  sec  1.36 GBytes  11.7 Gbits/sec    0   4.18 MBytes       
+[SUM]  12.00-13.00  sec  2.75 GBytes  23.6 Gbits/sec    1             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  13.00-14.00  sec  1.34 GBytes  11.5 Gbits/sec    0   4.25 MBytes       
+[  7]  13.00-14.00  sec  1.36 GBytes  11.7 Gbits/sec    0   4.18 MBytes       
+[SUM]  13.00-14.00  sec  2.70 GBytes  23.2 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  14.00-15.00  sec  1.36 GBytes  11.7 Gbits/sec    0   4.25 MBytes       
+[  7]  14.00-15.00  sec  1.41 GBytes  12.1 Gbits/sec    0   4.18 MBytes       
+[SUM]  14.00-15.00  sec  2.76 GBytes  23.7 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  15.00-16.00  sec  1.32 GBytes  11.4 Gbits/sec    0   4.25 MBytes       
+[  7]  15.00-16.00  sec  1.34 GBytes  11.5 Gbits/sec    0   4.18 MBytes       
+[SUM]  15.00-16.00  sec  2.66 GBytes  22.8 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  16.00-17.01  sec  1.16 GBytes  9.90 Gbits/sec    2   4.25 MBytes       
+[  7]  16.00-17.01  sec  1.18 GBytes  10.0 Gbits/sec    2   4.18 MBytes       
+[SUM]  16.00-17.01  sec  2.34 GBytes  19.9 Gbits/sec    4             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  17.01-18.00  sec  1.15 GBytes  9.99 Gbits/sec    6   3.00 MBytes       
+[  7]  17.01-18.00  sec  1.16 GBytes  10.1 Gbits/sec    3   4.18 MBytes       
+[SUM]  17.01-18.00  sec  2.31 GBytes  20.0 Gbits/sec    9             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  18.00-19.00  sec  1.31 GBytes  11.2 Gbits/sec    0   3.12 MBytes       
+[  7]  18.00-19.00  sec  1.36 GBytes  11.7 Gbits/sec    1   4.18 MBytes       
+[SUM]  18.00-19.00  sec  2.67 GBytes  22.9 Gbits/sec    1             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  19.00-20.00  sec  1.04 GBytes  8.93 Gbits/sec    0   4.31 MBytes       
+[  7]  19.00-20.00  sec  1.10 GBytes  9.41 Gbits/sec    1   4.18 MBytes       
+[SUM]  19.00-20.00  sec  2.13 GBytes  18.3 Gbits/sec    1             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  20.00-21.00  sec  1.19 GBytes  10.2 Gbits/sec    0   4.31 MBytes       
+[  7]  20.00-21.01  sec  1.22 GBytes  10.4 Gbits/sec    0   4.18 MBytes       
+[SUM]  20.00-21.00  sec  2.42 GBytes  20.8 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  21.00-22.00  sec  1.36 GBytes  11.7 Gbits/sec    0   4.31 MBytes       
+[  7]  21.01-22.00  sec  1.36 GBytes  11.8 Gbits/sec    0   4.18 MBytes       
+[SUM]  21.00-22.00  sec  2.72 GBytes  23.4 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  22.00-23.00  sec  1.36 GBytes  11.7 Gbits/sec    0   4.31 MBytes       
+[  7]  22.00-23.00  sec  1.39 GBytes  12.0 Gbits/sec    0   4.18 MBytes       
+[SUM]  22.00-23.00  sec  2.75 GBytes  23.6 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  23.00-24.00  sec  1.34 GBytes  11.5 Gbits/sec    0   4.31 MBytes       
+[  7]  23.00-24.00  sec  1.34 GBytes  11.5 Gbits/sec    0   4.18 MBytes       
+[SUM]  23.00-24.00  sec  2.68 GBytes  23.0 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  24.00-25.00  sec  1.37 GBytes  11.8 Gbits/sec    1   4.31 MBytes       
+[  7]  24.00-25.00  sec  1.40 GBytes  12.0 Gbits/sec    2   3.18 MBytes       
+[SUM]  24.00-25.00  sec  2.77 GBytes  23.8 Gbits/sec    3             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  25.00-26.00  sec  1.34 GBytes  11.5 Gbits/sec    0   4.31 MBytes       
+[  7]  25.00-26.00  sec  1.34 GBytes  11.5 Gbits/sec    0   3.37 MBytes       
+[SUM]  25.00-26.00  sec  2.68 GBytes  23.0 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  26.00-27.00  sec  1.18 GBytes  10.1 Gbits/sec    5   4.31 MBytes       
+[  7]  26.00-27.00  sec  1.22 GBytes  10.4 Gbits/sec    4   4.00 MBytes       
+[SUM]  26.00-27.00  sec  2.40 GBytes  20.6 Gbits/sec    9             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  27.00-28.00  sec  1.17 GBytes  10.1 Gbits/sec    3   4.31 MBytes       
+[  7]  27.00-28.00  sec  1.18 GBytes  10.1 Gbits/sec    0   4.00 MBytes       
+[SUM]  27.00-28.00  sec  2.35 GBytes  20.2 Gbits/sec    3             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  28.00-29.00  sec  1.34 GBytes  11.5 Gbits/sec    3   4.31 MBytes       
+[  7]  28.00-29.00  sec  1.32 GBytes  11.4 Gbits/sec    1   4.18 MBytes       
+[SUM]  28.00-29.00  sec  2.66 GBytes  22.9 Gbits/sec    4             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  29.00-30.00  sec  1.14 GBytes  9.76 Gbits/sec    1   4.31 MBytes       
+[  7]  29.00-30.00  sec  1.18 GBytes  10.2 Gbits/sec    1   4.18 MBytes       
+[SUM]  29.00-30.00  sec  2.32 GBytes  19.9 Gbits/sec    2             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  30.00-31.00  sec  1.23 GBytes  10.5 Gbits/sec    0   4.31 MBytes       
+[  7]  30.00-31.00  sec  1.24 GBytes  10.7 Gbits/sec    0   4.18 MBytes       
+[SUM]  30.00-31.00  sec  2.47 GBytes  21.2 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  31.00-32.00  sec  1.36 GBytes  11.7 Gbits/sec    0   4.31 MBytes       
+[  7]  31.00-32.00  sec  1.38 GBytes  11.9 Gbits/sec    0   4.18 MBytes       
+[SUM]  31.00-32.00  sec  2.74 GBytes  23.6 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  32.00-33.00  sec  1.29 GBytes  11.1 Gbits/sec    0   4.31 MBytes       
+[  7]  32.00-33.00  sec  1.33 GBytes  11.4 Gbits/sec    0   4.18 MBytes       
+[SUM]  32.00-33.00  sec  2.62 GBytes  22.5 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  33.00-34.00  sec  1.34 GBytes  11.5 Gbits/sec    0   4.31 MBytes       
+[  7]  33.00-34.00  sec  1.35 GBytes  11.6 Gbits/sec    0   4.18 MBytes       
+[SUM]  33.00-34.00  sec  2.69 GBytes  23.1 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  34.00-35.00  sec  1.36 GBytes  11.7 Gbits/sec    0   4.31 MBytes       
+[  7]  34.00-35.01  sec  1.40 GBytes  11.9 Gbits/sec    0   4.18 MBytes       
+[SUM]  34.00-35.00  sec  2.76 GBytes  23.7 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  35.00-36.00  sec  1.31 GBytes  11.2 Gbits/sec    0   4.31 MBytes       
+[  7]  35.01-36.00  sec  1.30 GBytes  11.2 Gbits/sec    1   4.18 MBytes       
+[SUM]  35.00-36.00  sec  2.61 GBytes  22.4 Gbits/sec    1             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  36.00-37.00  sec  1.18 GBytes  10.1 Gbits/sec    4   4.31 MBytes       
+[  7]  36.00-37.00  sec  1.17 GBytes  10.0 Gbits/sec    3   4.18 MBytes       
+[SUM]  36.00-37.00  sec  2.34 GBytes  20.1 Gbits/sec    7             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  37.00-38.00  sec  1.15 GBytes  9.93 Gbits/sec    2   4.31 MBytes       
+[  7]  37.00-38.00  sec  1.18 GBytes  10.1 Gbits/sec    1   4.18 MBytes       
+[SUM]  37.00-38.00  sec  2.34 GBytes  20.1 Gbits/sec    3             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  38.00-39.00  sec  1.33 GBytes  11.4 Gbits/sec    2   4.31 MBytes       
+[  7]  38.00-39.00  sec  1.34 GBytes  11.6 Gbits/sec    0   4.18 MBytes       
+[SUM]  38.00-39.00  sec  2.67 GBytes  22.9 Gbits/sec    2             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  39.00-40.00  sec  1.14 GBytes  9.75 Gbits/sec    4   4.31 MBytes       
+[  7]  39.00-40.00  sec  1.15 GBytes  9.85 Gbits/sec    1   4.18 MBytes       
+[SUM]  39.00-40.00  sec  2.29 GBytes  19.6 Gbits/sec    5             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  40.00-41.00  sec  1.14 GBytes  9.84 Gbits/sec    0   4.31 MBytes       
+[  7]  40.00-41.01  sec  1.19 GBytes  10.2 Gbits/sec    0   4.18 MBytes       
+[SUM]  40.00-41.00  sec  2.33 GBytes  20.1 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  41.00-42.00  sec   903 MBytes  7.57 Gbits/sec    5   4.31 MBytes       
+[  7]  41.01-42.00  sec   908 MBytes  7.67 Gbits/sec    6   4.18 MBytes       
+[SUM]  41.00-42.00  sec  1.77 GBytes  15.2 Gbits/sec   11             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  42.00-43.00  sec  1.37 GBytes  11.7 Gbits/sec    0   4.31 MBytes       
+[  7]  42.00-43.00  sec  1.39 GBytes  11.9 Gbits/sec    0   4.18 MBytes       
+[SUM]  42.00-43.00  sec  2.76 GBytes  23.7 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  43.00-44.00  sec  1.35 GBytes  11.6 Gbits/sec    0   4.31 MBytes       
+[  7]  43.00-44.00  sec  1.33 GBytes  11.5 Gbits/sec    1   4.18 MBytes       
+[SUM]  43.00-44.00  sec  2.68 GBytes  23.1 Gbits/sec    1             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  44.00-45.00  sec  1.41 GBytes  12.1 Gbits/sec    0   4.31 MBytes       
+[  7]  44.00-45.00  sec  1.38 GBytes  11.9 Gbits/sec    1   4.18 MBytes       
+[SUM]  44.00-45.00  sec  2.79 GBytes  23.9 Gbits/sec    1             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  45.00-46.00  sec  1.34 GBytes  11.5 Gbits/sec    0   4.31 MBytes       
+[  7]  45.00-46.00  sec  1.32 GBytes  11.3 Gbits/sec    1   4.18 MBytes       
+[SUM]  45.00-46.00  sec  2.66 GBytes  22.8 Gbits/sec    1             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  46.00-47.00  sec  1.03 GBytes  8.80 Gbits/sec    4   4.31 MBytes       
+[  7]  46.00-47.00  sec  1.19 GBytes  10.3 Gbits/sec    5   4.18 MBytes       
+[SUM]  46.00-47.00  sec  2.22 GBytes  19.1 Gbits/sec    9             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  47.00-48.00  sec  1.18 GBytes  10.1 Gbits/sec    1   4.31 MBytes       
+[  7]  47.00-48.01  sec  1.18 GBytes  10.1 Gbits/sec    3   4.18 MBytes       
+[SUM]  47.00-48.00  sec  2.36 GBytes  20.3 Gbits/sec    4             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  48.00-49.00  sec  1.26 GBytes  10.8 Gbits/sec    1   4.31 MBytes       
+[  7]  48.01-49.00  sec  1.23 GBytes  10.7 Gbits/sec    1   4.18 MBytes       
+[SUM]  48.00-49.00  sec  2.49 GBytes  21.4 Gbits/sec    2             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  49.00-50.00  sec  1.16 GBytes  9.93 Gbits/sec    0   4.31 MBytes       
+[  7]  49.00-50.00  sec  1.18 GBytes  10.1 Gbits/sec    1   4.18 MBytes       
+[SUM]  49.00-50.00  sec  2.34 GBytes  20.1 Gbits/sec    1             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  50.00-51.00  sec  1.23 GBytes  10.6 Gbits/sec    0   4.31 MBytes       
+[  7]  50.00-51.00  sec  1.23 GBytes  10.5 Gbits/sec    0   4.18 MBytes       
+[SUM]  50.00-51.00  sec  2.46 GBytes  21.1 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  51.00-52.00  sec  1.36 GBytes  11.7 Gbits/sec    1   4.31 MBytes       
+[  7]  51.00-52.00  sec  1.36 GBytes  11.7 Gbits/sec    0   4.18 MBytes       
+[SUM]  51.00-52.00  sec  2.73 GBytes  23.5 Gbits/sec    1             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  52.00-53.00  sec  1.37 GBytes  11.7 Gbits/sec    0   4.31 MBytes       
+[  7]  52.00-53.00  sec  1.36 GBytes  11.7 Gbits/sec    0   4.18 MBytes       
+[SUM]  52.00-53.00  sec  2.73 GBytes  23.5 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  53.00-54.00  sec  1.35 GBytes  11.6 Gbits/sec    0   4.31 MBytes       
+[  7]  53.00-54.00  sec  1.34 GBytes  11.5 Gbits/sec    0   4.18 MBytes       
+[SUM]  53.00-54.00  sec  2.69 GBytes  23.1 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  54.00-55.00  sec  1.37 GBytes  11.7 Gbits/sec    1   4.31 MBytes       
+[  7]  54.00-55.01  sec  1.37 GBytes  11.7 Gbits/sec    1   4.18 MBytes       
+[SUM]  54.00-55.00  sec  2.74 GBytes  23.5 Gbits/sec    2             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  55.00-56.00  sec  1.30 GBytes  11.2 Gbits/sec    0   4.31 MBytes       
+[  7]  55.01-56.00  sec  1.35 GBytes  11.6 Gbits/sec    0   4.18 MBytes       
+[SUM]  55.00-56.00  sec  2.65 GBytes  22.9 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  56.00-57.00  sec  1.18 GBytes  10.1 Gbits/sec    3   4.31 MBytes       
+[  7]  56.00-57.00  sec  1.19 GBytes  10.2 Gbits/sec    1   4.18 MBytes       
+[SUM]  56.00-57.00  sec  2.36 GBytes  20.2 Gbits/sec    4             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  57.00-58.00  sec  1.15 GBytes  9.91 Gbits/sec    3   4.31 MBytes       
+[  7]  57.00-58.00  sec  1.15 GBytes  9.91 Gbits/sec    2   3.18 MBytes       
+[SUM]  57.00-58.00  sec  2.30 GBytes  19.8 Gbits/sec    5             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  58.00-59.00  sec  1.33 GBytes  11.4 Gbits/sec    2   4.31 MBytes       
+[  7]  58.00-59.00  sec  1.35 GBytes  11.6 Gbits/sec    0   3.56 MBytes       
+[SUM]  58.00-59.00  sec  2.68 GBytes  23.0 Gbits/sec    2             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]  59.00-60.00  sec  1.07 GBytes  9.17 Gbits/sec    0   4.31 MBytes       
+[  7]  59.00-60.00  sec  1.07 GBytes  9.24 Gbits/sec    0   4.18 MBytes       
+[SUM]  59.00-60.00  sec  2.15 GBytes  18.4 Gbits/sec    0             
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-60.00  sec  75.1 GBytes  10.7 Gbits/sec   62             sender
+[  5]   0.00-60.01  sec  75.1 GBytes  10.7 Gbits/sec                  receiver
+[  7]   0.00-60.00  sec  76.3 GBytes  10.9 Gbits/sec   51             sender
+[  7]   0.00-60.01  sec  76.3 GBytes  10.9 Gbits/sec                  receiver
+[SUM]   0.00-60.00  sec   151 GBytes  21.7 Gbits/sec  113             sender
+[SUM]   0.00-60.01  sec   151 GBytes  21.7 Gbits/sec                  receiver
+
+iperf Done.
+
+
